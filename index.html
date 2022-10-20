@@ -6,10 +6,123 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    Hii
+    <div class="background">
+        <div class="star"></div>
+        <div class="mountain">
+            <img src="mountain-png-uplyft-creative-branding-design-development-fort-33.png" alt="">
+        </div>
+        <div class="moon">
+            <img src="moon-png-no-background-15.png" alt="">
+        </div>
+    </div>
+    <div class="content">
+        <div class="box">
+            <pre id="typewriter">
+<span style="color: #ff5555;">const</span> <span style="color: #bd93f9;">object</span> <span style="color: #ff5555;">= {</span>
+    name: <span class="string-highlight">'TNowAD'</span>,
+    type: <span class="string-highlight">'Human'</span>,
+    location: <span class="string-highlight">'Earth'</span>,
+    properties:[<span class="string-highlight">'Javascript'</span>,
+                <span class="string-highlight">'C++'</span>,
+                <span class="string-highlight">'Java'</span>,
+                <span class="string-highlight">'Python'</span>]
+<span style="color: #ff5555;">}</span>
+
+<a href="https://github.com/tnowad" style="color: #8be9fd;">Github</a>, <a href="https://www.hackerrank.com/tnowad/" style="color: #50fa7b;">HackerRank</a>, <a href="https://www.facebook.com/TNOWAD" style="color: #5f9ef0;">Facebook</a>
+</pre>
+        </div>
+    </div>
+    <script>
+        const star = document.querySelector('.star')
+        const mountain = document.querySelector('.mountain')
+        const moon = document.querySelector('.moon')
+        document.addEventListener('mousemove', (ev) => {
+            console.log(0.5 - ev.x / screen.width, 0.5 - ev.y / screen.height)
+            let x = 0.5 - ev.x / screen.width
+            let y = 0.5 - ev.y / screen.height
+            star.style.left = x * 20 + 'px'
+            star.style.top = y * 20 + 'px'
+            mountain.style.left = -x * 500 + 'px'
+            mountain.style.bottom = y * 50 + 'px'
+            moon.style.left = x * 25 + 'px'
+            moon.style.top = y * 25 + 'px'
+        })
+
+        function setupTypewriter(t) {
+            var HTML = t.innerHTML;
+
+            t.innerHTML = "";
+
+            var cursorPosition = 0,
+                tag = "",
+                writingTag = false,
+                tagOpen = false,
+                typeSpeed = 100,
+                tempTypeSpeed = 0;
+
+            var type = function () {
+
+                if (writingTag === true) {
+                    tag += HTML[cursorPosition];
+                }
+
+                if (HTML[cursorPosition] === "<") {
+                    tempTypeSpeed = 0;
+                    if (tagOpen) {
+                        tagOpen = false;
+                        writingTag = true;
+                    } else {
+                        tag = "";
+                        tagOpen = true;
+                        writingTag = true;
+                        tag += HTML[cursorPosition];
+                    }
+                }
+                if (!writingTag && tagOpen) {
+                    tag.innerHTML += HTML[cursorPosition];
+                }
+                if (!writingTag && !tagOpen) {
+                    if (HTML[cursorPosition] === " ") {
+                        tempTypeSpeed = 0;
+                    }
+                    else {
+                        tempTypeSpeed = (Math.random() * typeSpeed) + 50;
+                    }
+                    t.innerHTML += HTML[cursorPosition];
+                }
+                if (writingTag === true && HTML[cursorPosition] === ">") {
+                    tempTypeSpeed = (Math.random() * typeSpeed) + 50;
+                    writingTag = false;
+                    if (tagOpen) {
+                        var newSpan = document.createElement("span");
+                        t.appendChild(newSpan);
+                        newSpan.innerHTML = tag;
+                        tag = newSpan.firstChild;
+                    }
+                }
+
+                cursorPosition += 1;
+                if (cursorPosition < HTML.length - 1) {
+                    setTimeout(type, tempTypeSpeed);
+                }
+
+            };
+
+            return {
+                type: type
+            };
+        }
+
+        var typer = document.getElementById('typewriter');
+
+        typewriter = setupTypewriter(typewriter);
+
+        typewriter.type();
+    </script>
 </body>
 
 </html>

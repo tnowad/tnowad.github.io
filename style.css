@@ -1,0 +1,102 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	width: 100%;
+	background: linear-gradient(#000000, #11091f);
+	height: 100vh;
+	overflow: hidden;
+}
+
+.background * {
+	position: relative;
+	z-index: -1000;
+}
+
+.star {
+	position: absolute;
+	background: url('stars.png');
+	transform: translateX(-50%);
+	height: 200vh;
+	width: 200%;
+}
+
+.mountain {
+	height: 100vh;
+	position: absolute;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: flex-end;
+	transform: scale(1.1) ;
+}
+
+.mountain img {
+	transform: translate(-10%, 50px);
+}
+
+.moon {
+	position: absolute;
+	height: 300px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.content {
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.box {
+	height: 400px;
+	width: 560px;
+	background-color: #0d051a91;
+	padding: 40px;
+}
+
+.var-highlight {
+	color: #C0AD60;
+}
+
+.string-highlight {
+	color: #bd93f9;
+}
+
+#typewriter {
+	font-size: 2em;
+	margin: 0;
+	font-family: "Courier New";
+	color: #f1fa8c;
+}
+
+#typewriter:after {
+	content: "|";
+	-webkit-animation: blink 500ms linear infinite alternate;
+	animation: blink 500ms linear infinite alternate;
+}
+
+@-webkit-keyframes blink {
+	0% {
+		opacity: 0;
+	}
+	
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes blink {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
