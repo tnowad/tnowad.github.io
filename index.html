@@ -6,123 +6,169 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link href="//db.onlinewebfonts.com/c/05289e866fe7e1e99d27a7a31f8d3b66?family=Trattatello" rel="stylesheet"
+        type="text/css" />
+    <link href='https://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet'>
 </head>
 
 <body>
-    <div class="background">
-        <div class="star"></div>
-        <div class="mountain">
-            <img src="mountain-png-uplyft-creative-branding-design-development-fort-33.png" alt="">
-        </div>
-        <div class="moon">
-            <img src="moon-png-no-background-15.png" alt="">
-        </div>
-    </div>
-    <div class="content">
-        <div class="box">
-            <pre id="typewriter">
-<span style="color: #ff5555;">const</span> <span style="color: #bd93f9;">object</span> <span style="color: #ff5555;">= {</span>
-    name: <span class="string-highlight">'TNowAD'</span>,
-    type: <span class="string-highlight">'Human'</span>,
-    location: <span class="string-highlight">'Earth'</span>,
-    properties:[<span class="string-highlight">'Javascript'</span>,
-                <span class="string-highlight">'C++'</span>,
-                <span class="string-highlight">'Java'</span>,
-                <span class="string-highlight">'Python'</span>]
-<span style="color: #ff5555;">}</span>
-
-<a href="https://github.com/tnowad" style="color: #8be9fd;">Github</a>, <a href="https://www.hackerrank.com/tnowad/" style="color: #50fa7b;">HackerRank</a>, <a href="https://www.facebook.com/TNOWAD" style="color: #5f9ef0;">Facebook</a>
-</pre>
-        </div>
-    </div>
-    <script>
-        const star = document.querySelector('.star')
-        const mountain = document.querySelector('.mountain')
-        const moon = document.querySelector('.moon')
-        document.addEventListener('mousemove', (ev) => {
-            console.log(0.5 - ev.x / screen.width, 0.5 - ev.y / screen.height)
-            let x = 0.5 - ev.x / screen.width
-            let y = 0.5 - ev.y / screen.height
-            star.style.left = x * 20 + 'px'
-            star.style.top = y * 20 + 'px'
-            mountain.style.left = -x * 500 + 'px'
-            mountain.style.bottom = y * 50 + 'px'
-            moon.style.left = x * 25 + 'px'
-            moon.style.top = y * 25 + 'px'
-        })
-
-        function setupTypewriter(t) {
-            var HTML = t.innerHTML;
-
-            t.innerHTML = "";
-
-            var cursorPosition = 0,
-                tag = "",
-                writingTag = false,
-                tagOpen = false,
-                typeSpeed = 100,
-                tempTypeSpeed = 0;
-
-            var type = function () {
-
-                if (writingTag === true) {
-                    tag += HTML[cursorPosition];
-                }
-
-                if (HTML[cursorPosition] === "<") {
-                    tempTypeSpeed = 0;
-                    if (tagOpen) {
-                        tagOpen = false;
-                        writingTag = true;
-                    } else {
-                        tag = "";
-                        tagOpen = true;
-                        writingTag = true;
-                        tag += HTML[cursorPosition];
-                    }
-                }
-                if (!writingTag && tagOpen) {
-                    tag.innerHTML += HTML[cursorPosition];
-                }
-                if (!writingTag && !tagOpen) {
-                    if (HTML[cursorPosition] === " ") {
-                        tempTypeSpeed = 0;
-                    }
-                    else {
-                        tempTypeSpeed = (Math.random() * typeSpeed) + 50;
-                    }
-                    t.innerHTML += HTML[cursorPosition];
-                }
-                if (writingTag === true && HTML[cursorPosition] === ">") {
-                    tempTypeSpeed = (Math.random() * typeSpeed) + 50;
-                    writingTag = false;
-                    if (tagOpen) {
-                        var newSpan = document.createElement("span");
-                        t.appendChild(newSpan);
-                        newSpan.innerHTML = tag;
-                        tag = newSpan.firstChild;
-                    }
-                }
-
-                cursorPosition += 1;
-                if (cursorPosition < HTML.length - 1) {
-                    setTimeout(type, tempTypeSpeed);
-                }
-
-            };
-
-            return {
-                type: type
-            };
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
         }
 
-        var typer = document.getElementById('typewriter');
+        a {
+            text-decoration: none;
+        }
 
-        typewriter = setupTypewriter(typewriter);
+        .wrapper {
+            width: 100%;
+            min-width: 1200px;
+            background: black;
+            height: 100vh;
+        }
 
-        typewriter.type();
-    </script>
+        .wrapper>* {
+            display: flex;
+            justify-content: center;
+        }
+
+        .header {
+            width: 100%;
+        }
+
+        .header .container {
+            margin: 50px 40px;
+            width: min(100%, 1500px);
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .header .container>* {
+            width: 30%;
+            font-size: 20px;
+            height: 50px;
+        }
+
+        .header .container>*>* {
+            line-height: 30px;
+        }
+
+        .header .container .left {
+            display: flex;
+            text-align: center;
+        }
+
+        .header .container .left>* {
+            margin-right: 20px;
+            color: white;
+        }
+
+        .header .container .middle {
+            display: flex;
+            width: fit-content;
+            justify-content: center;
+        }
+
+        .header .container .right {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .header .container .right>* {
+            margin-left: 20px;
+            background: white;
+            color: black;
+            border-radius: 50%;
+            display: flex;
+            width: 40px;
+            height: 40px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* content */
+        .content .title {
+            text-align: center;
+            font-size: 36px;
+            font-family: 'Merriweather';
+            color: white;
+            margin-top: 10vh;
+        }
+
+        .content .title>span:nth-child(2) {
+            color: #01d4a2;
+            font-weight: 100;
+        }
+
+        .content .title>span:nth-child(4) {
+            font-weight: 500;
+        }
+
+        .content .profile-img {
+            height: 30vh;
+            margin-top: 10vh;
+            width: 30vh;
+            border-radius: 50%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #01d4a2;
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        }
+
+        .content .profile-img:hover {
+            transform: scale(1.1);
+        }
+
+        .content .profile-img>img {
+            border-radius: 50%;
+            height: 95%;
+        }
+    </style>
+    <div class="wrapper">
+        <div class="header">
+            <div class="container">
+                <div class="left">
+                    <a href="">Portfolio</a>
+                    <a href="">About Me</a>
+                    <a href="">Get In Touch</a>
+                </div>
+                <div class="middle">
+                    <a href=""><img src="./hello.svg" alt="" srcset=""></a>
+                </div>
+                <div class="right">
+                    <a href=""><i class="fab fa-github"></i></a>
+                    <a href=""><i class="fab fa-facebook-f"></i></a>
+                    <a href=""><i class="fab fa-telegram"></i></a>
+                    <a href=""><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="profile-img">
+                <img src="/profile-img.jpg" alt="">
+            </div>
+            <h2 class="title">
+                Nguyen Minh Tuan <br>
+                <span>Freelance Web Developer</span> <br>
+                <span> Based In VN</span>
+            </h2>
+        </div>
+        <div class="footer"></div>
+    </div>
 </body>
 
 </html>
