@@ -1,9 +1,9 @@
-import { Routes, Route } from "react-router-dom"
+import { Routes, Route } from "react-router-dom";
 
-import Navbar from "./components/Navbar"
-import Home from "./routes/Home"
-import About from "./routes/About"
-import Careers from "./routes/Careers"
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Careers from "./pages/Careers";
 function App() {
   return (
     <>
@@ -14,7 +14,7 @@ function App() {
         <Route path="/careers" element={<Careers />} />
       </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
