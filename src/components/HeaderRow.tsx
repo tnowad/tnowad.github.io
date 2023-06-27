@@ -1,8 +1,6 @@
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
-
 export function HeaderRow() {
-  const [links, setLinks] = useState([
+  const links = [
     {
       title: 'Home',
       path: '/',
@@ -27,7 +25,7 @@ export function HeaderRow() {
       title: 'Resume',
       path: '/resume',
     },
-  ]);
+  ];
   return (
     <div className="flex sticky flex-row justify-between p-5 flex-wrap md:flex-nowrap">
       <div>
@@ -37,7 +35,7 @@ export function HeaderRow() {
         </div>
         <div>I'm a Backend Developer</div>
       </div>
-      <div className="flex items-center w-full justify-center md:justify-end">
+      <div className="flex items-center w-full justify-center pt-5 md:pt-0 md:justify-end">
         <ul className="flex flex-wrap justify-center md:justify-end">
           {links.map((item) => {
             return (

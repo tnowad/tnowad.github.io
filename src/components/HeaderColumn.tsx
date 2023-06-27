@@ -1,7 +1,6 @@
-import { Link, useLocation } from 'react-router-dom';
-import { useState } from 'react';
+import { Link } from 'react-router-dom';
 export function HeaderColumn() {
-  const [links, setLinks] = useState([
+  const links = [
     {
       title: 'Home',
       path: '/',
@@ -26,7 +25,7 @@ export function HeaderColumn() {
       title: 'Resume',
       path: '/resume',
     },
-  ]);
+  ];
 
   return (
     <div className="flex flex-col p-5">

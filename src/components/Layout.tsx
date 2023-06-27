@@ -18,18 +18,18 @@ export function Layout({ ...props }) {
     >
       {location.pathname == '/' ? <HeaderColumn /> : <HeaderRow />}
 
-      <TransitionGroup>
+      {/* <TransitionGroup>
         <CSSTransition
           nodeRef={nodeRef}
           key={location.key}
           classNames="page-transition"
           timeout={400}
-        >
-          <div ref={nodeRef} className="page">
-            {props.children}
-          </div>
-        </CSSTransition>
-      </TransitionGroup>
+        > */}
+      <div ref={nodeRef} className="page">
+        {props.children}
+      </div>
+      {/* </CSSTransition>
+      </TransitionGroup> */}
     </div>
   );
 }
