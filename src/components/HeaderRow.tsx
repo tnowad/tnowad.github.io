@@ -29,7 +29,7 @@ export function HeaderRow() {
     },
   ]);
   return (
-    <div className="flex flex-row justify-between p-5 flex-wrap md:flex-nowrap">
+    <div className="flex sticky flex-row justify-between p-5 flex-wrap md:flex-nowrap">
       <div>
         <div className="text-2xl">Hello, I'm</div>
         <div className="text-3xl sm:text-5xl lg:text-6xl font-bold whitespace-nowrap">

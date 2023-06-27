@@ -10,7 +10,7 @@ export function Layout({ ...props }) {
   const nodeRef = useRef(null);
   return (
     <div
-      className={`text-[#051747] font-mono min-w-full min-h-screen ${
+      className={`text-[#051747] relative font-mono min-w-full min-h-screen ${
         location.pathname == '/'
           ? 'flex items-center flex-col justify-center'
           : ''
@@ -22,8 +22,8 @@ export function Layout({ ...props }) {
         <CSSTransition
           nodeRef={nodeRef}
           key={location.key}
-          classNames="fade"
-          timeout={300}
+          classNames="page-transition"
+          timeout={400}
         >
           <div ref={nodeRef} className="page">
             {props.children}
