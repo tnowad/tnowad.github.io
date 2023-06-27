@@ -1,7 +1,15 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 export function Navbar() {
+  const location = useLocation();
+  const getClassName = () => {
+    if (location.pathname === '/') {
+      return 'flex-col';
+    } else {
+      return 'flex-row';
+    }
+  };
   return (
-    <div className="">
+    <div className={`flex ${getClassName()}`}>
       <div>
         <div>Hello, I'm</div>
         <div>Nguyen Minh Tuan</div>
