@@ -1,17 +1,26 @@
 import { useLocation } from 'react-router-dom';
+import { useRef } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import './Layout.css';
-import { Header } from './Header';
+import { HeaderColumn } from './HeaderColumn';
+import { HeaderRow } from './HeaderRow';
 
 export function Layout({ ...props }) {
   const location = useLocation();
-
+  const nodeRef = useRef(null);
   return (
     <div>
-      <Header />
+      {location.pathname == '/' ? <HeaderColumn /> : <HeaderRow />}
       <TransitionGroup>
-        <CSSTransition key={location.key} classNames="slide" timeout={300}>
-          <div className="page">{props.children}</div>
+        <CSSTransition
+          nodeRef={nodeRef}
+          key={location.key}
+          classNames="fade"
+          timeout={300}
+        >
+          <div ref={nodeRef} className="page">
+            {props.children}
+          </div>
         </CSSTransition>
       </TransitionGroup>
     </div>

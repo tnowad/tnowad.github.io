@@ -1,11 +1,13 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
-export function Header() {
+export function HeaderRow() {
+  const location = useLocation();
+
   return (
-    <div className={`flex flex-col`}>
+    <div className="flex flex-row">
       <div>
         <div className="text-2xl">Hello, I'm</div>
-        <div className="text-6xl font-bold ">Nguyen Minh Tuan</div>
+        <div className="text-6xl font-bold">Nguyen Minh Tuan</div>
         <div>I'm a Backend Developer</div>
       </div>
       <div>
