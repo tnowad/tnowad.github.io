@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom';
+import { TypeAnimation } from 'react-type-animation';
+
 export function HeaderColumn() {
   const links = [
     {
@@ -32,10 +34,23 @@ export function HeaderColumn() {
       <div>
         <div className="text-2xl">Hello, I'm</div>
         <div className="text-3xl min-[510px]:text-5xl md:text-6xl font-bold">
-          Nguyen Minh Tuan
+          <TypeAnimation sequence={['Nguyen Minh Tuan', 100]} cursor={false} />
         </div>
         <div className="text-xl min-[510px]:text-2xl">
-          I'm a Backend Developer
+          <TypeAnimation
+            sequence={[
+              'I am a Backend Developer',
+              1000,
+              'Passionate about Web Development',
+              1000,
+              'Constantly Learning and Growing',
+              1000,
+            ]}
+            wrapper="span"
+            speed={50}
+            style={{ fontSize: '1rem', display: 'inline-block' }}
+            repeat={Infinity}
+          />
         </div>
       </div>
       <ul className="flex flex-wrap pt-2 justify-center">

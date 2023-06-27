@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom';
+import { TypeAnimation } from 'react-type-animation';
+
 export function HeaderRow() {
   const links = [
     {
@@ -29,11 +31,23 @@ export function HeaderRow() {
   return (
     <div className="flex sticky top-0 h-fit flex-row justify-between z-50 p-5 flex-wrap md:flex-nowrap shadow-sm backdrop-blur-sm">
       <Link to="/">
-        <div className="text-2xl">Hello, I'm</div>
         <div className="text-3xl sm:text-5xl lg:text-6xl font-bold whitespace-nowrap">
           Nguyen Minh Tuan
         </div>
-        <div>I'm a Backend Developer</div>
+        <TypeAnimation
+          sequence={[
+            'I am a Backend Developer',
+            1000,
+            'Passionate about Web Development',
+            1000,
+            'Constantly Learning and Growing',
+            1000,
+          ]}
+          wrapper="span"
+          speed={50}
+          style={{ fontSize: '1rem', display: 'inline-block' }}
+          repeat={Infinity}
+        />
       </Link>
       <div className="flex items-center w-full justify-center pt-5 md:pt-0 md:justify-end">
         <ul className="flex flex-wrap justify-center md:justify-end">
