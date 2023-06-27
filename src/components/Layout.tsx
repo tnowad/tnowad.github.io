@@ -12,7 +12,7 @@ export function Layout({ ...props }) {
   return (
     <div
       style={{ background: `url(${background})` }}
-      className={`text-[#051747] bg-slate-300 relative font-mono min-w-full min-h-screen ${
+      className={`text-[#051747] relative font-mono min-w-full min-h-screen ${
         location.pathname == '/'
           ? 'flex items-center flex-col justify-center'
           : ''
