@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import { About } from './pages/About';
 import { Experience } from './pages/Experience';
 import { Home } from './pages/Home';
@@ -8,7 +8,7 @@ import { Skill } from './pages/Skill';
 import { Layout } from './components/Layout';
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Layout>
         <Routes>
           <Route path="/" Component={Home} />
@@ -19,7 +19,7 @@ function App() {
           <Route path="/resume" Component={Resume} />
         </Routes>
       </Layout>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
