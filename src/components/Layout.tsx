@@ -1,6 +1,7 @@
 import { useLocation } from 'react-router-dom';
 import { useRef } from 'react';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+// import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import background from '../assets/background.png';
 import './Layout.css';
 import { HeaderColumn } from './HeaderColumn';
 import { HeaderRow } from './HeaderRow';
@@ -10,7 +11,8 @@ export function Layout({ ...props }) {
   const nodeRef = useRef(null);
   return (
     <div
-      className={`text-[#051747] relative font-mono min-w-full min-h-screen ${
+      style={{ background: `url(${background})` }}
+      className={`text-[#051747] bg-slate-300 relative font-mono min-w-full min-h-screen ${
         location.pathname == '/'
           ? 'flex items-center flex-col justify-center'
           : ''

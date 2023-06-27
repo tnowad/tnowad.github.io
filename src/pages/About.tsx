@@ -1,6 +1,6 @@
 export function About() {
   return (
-    <div className="bg-gray-100 py-8 px-4 sm:px-6 lg:px-8">
+    <div className="py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-2xl font-bold mb-4">About</h2>
         <div className="flex justify-center">
