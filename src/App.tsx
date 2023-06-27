@@ -5,9 +5,11 @@ import { Home } from './pages/Home';
 import { Project } from './pages/Project';
 import { Resume } from './pages/Resume';
 import { Skill } from './pages/Skill';
+import { Navbar } from './components/Navbar';
 function App() {
   return (
     <BrowserRouter>
+      <Navbar></Navbar>
       <Routes>
         <Route path="/" Component={Home} />
         <Route path="/about" Component={About} />
