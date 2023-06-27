@@ -32,14 +32,14 @@ export function Home() {
         },
       ].map((item) => {
         return (
-          <li className="pr-5" key={item.path}>
+          <div className="pr-5" key={item.path}>
             <a
               href={item.path}
               className="flex items-center justify-center h-8 w-8 hover:bg-zinc-800 hover:rounded-full hover:text-white transition-all duration-300 ease-in-out"
             >
               <FontAwesomeIcon icon={item.icon} />
             </a>
-          </li>
+          </div>
         );
       })}
     </div>

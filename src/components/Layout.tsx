@@ -9,8 +9,15 @@ export function Layout({ ...props }) {
   const location = useLocation();
   const nodeRef = useRef(null);
   return (
-    <div className="text-[#051747] font-mono">
+    <div
+      className={`text-[#051747] font-mono min-w-full min-h-screen ${
+        location.pathname == '/'
+          ? 'flex items-center flex-col justify-center'
+          : ''
+      }`}
+    >
       {location.pathname == '/' ? <HeaderColumn /> : <HeaderRow />}
+
       <TransitionGroup>
         <CSSTransition
           nodeRef={nodeRef}
