@@ -9,7 +9,7 @@ export function Layout({ ...props }) {
   const location = useLocation();
   const nodeRef = useRef(null);
   return (
-    <div>
+    <div className="text-[#051747] font-mono">
       {location.pathname == '/' ? <HeaderColumn /> : <HeaderRow />}
       <TransitionGroup>
         <CSSTransition

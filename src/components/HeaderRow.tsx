@@ -1,8 +1,33 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 export function HeaderRow() {
-  const location = useLocation();
-
+  const [links, setLinks] = useState([
+    {
+      title: 'Home',
+      path: '/',
+    },
+    {
+      title: 'About',
+      path: '/about',
+    },
+    {
+      title: 'Experience',
+      path: '/experience',
+    },
+    {
+      title: 'Projects',
+      path: '/projects',
+    },
+    {
+      title: 'Skills',
+      path: '/skills',
+    },
+    {
+      title: 'Resume',
+      path: '/resume',
+    },
+  ]);
   return (
     <div className="flex flex-row">
       <div>
@@ -11,12 +36,24 @@ export function HeaderRow() {
         <div>I'm a Backend Developer</div>
       </div>
       <div>
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/experience">Experience</Link>
-        <Link to="/project">Projects</Link>
-        <Link to="/skill">Skills</Link>
-        <Link to="/resume">Resume</Link>
+        <ul className="flex">
+          {links.map((item) => {
+            return (
+              <li key={item.path} className="pr-5">
+                <Link
+                  to={item.path}
+                  className="leading-[100px] text-xl group transition-all duration-300 ease-in-out"
+                >
+                  <span
+                    className={`bg-left-bottom bg-gradient-to-r from-cyan-900 to-sky-900 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out `}
+                  >
+                    {item.title}
+                  </span>
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
       </div>
     </div>
   );
