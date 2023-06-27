@@ -32,7 +32,7 @@ export function HeaderRow() {
     <div className="flex flex-row justify-between p-5 flex-wrap md:flex-nowrap">
       <div>
         <div className="text-2xl">Hello, I'm</div>
-        <div className="text-5xl lg:text-6xl font-bold whitespace-nowrap">
+        <div className="text-3xl sm:text-5xl lg:text-6xl font-bold whitespace-nowrap">
           Nguyen Minh Tuan
         </div>
         <div>I'm a Backend Developer</div>
@@ -41,7 +41,7 @@ export function HeaderRow() {
         <ul className="flex flex-wrap justify-center md:justify-end">
           {links.map((item) => {
             return (
-              <li key={item.path} className="p-2">
+              <li key={item.path} className="pr-3">
                 <Link
                   to={item.path}
                   className="leading-7 text-xl group transition-all duration-300 ease-in-out"
